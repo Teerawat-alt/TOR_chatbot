@@ -3,7 +3,8 @@ import streamlit as st
 from dotenv import load_dotenv
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 from langchain_community.llms import HuggingFacePipeline
-from rag import ThaiTORRAG   # หรือจาก rag_pipeline import ThaiTORRAG
+from rag import ThaiTORRAG   
+from htmltemplates import css, user_template, bot_template
 
 load_dotenv()
 
