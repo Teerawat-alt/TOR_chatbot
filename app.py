@@ -10,12 +10,11 @@ load_dotenv()
 
 # ---- model config----
 EMBED_MODEL = "intfloat/multilingual-e5-base"
-GEN_MODEL   = "Qwen/Qwen2.5-1.5B-Instruct"  # ต้องเป็นรูปแบบ org/repo
+GEN_MODEL   = "Qwen/Qwen2.5-1.5B-Instruct"  
 
-# ---- ฟังก์ชันแคช LLM (โหลดแค่ครั้งเดียว) ----
+# Cache LLm 
 @st.cache_resource(show_spinner=False)
 def load_llm(model_id: str, hf_token: str | None):
-    # ป้องกันใส่ VL มาโดยไม่ตั้งใจ
     low = model_id.lower()
     # if "vl" in low or "vision" in low:
     #     raise ValueError(f"รุ่น {model_id} เป็น Vision-Language; โปรดใช้รุ่น text-only")
@@ -36,7 +35,7 @@ HF_TOKEN = (os.getenv("HF_TOKEN")
             #or os.getenv("HUGGINGFACEHUB_API_TOKEN")
             )
 
-# ---- โหลด/แคช LLM ครั้งเดียว ----
+# Load LLM
 if "llm" not in st.session_state:
     st.session_state.llm = load_llm(GEN_MODEL, HF_TOKEN)
 
