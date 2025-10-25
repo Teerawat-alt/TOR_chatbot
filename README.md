@@ -4,9 +4,9 @@
 ## Concept Idea 
 ----------------------------
 ![Tor chatbot Diagram](./docs/tor_chatbot.png)
-1. Ingest PDFs: Upload Thai TOR PDFs → extract text with pdfplumber; auto OCR fallback (tha+eng) for scanned docs.
+1. Ingest PDFs: Upload Thai TOR PDFs -> extract text with pdfplumber; auto OCR fallback (tha+eng) for scanned docs.
 
-2. Chunk & Index: Split with RecursiveCharacterTextSplitter → embed via intfloat/multilingual-e5-base → store in FAISS .
+2. Chunk & Index: Split with RecursiveCharacterTextSplitter -> embed via intfloat/multilingual-e5-base -> store in FAISS .
 
 3. Retrieve: User query is embedded and used to fetch top-k relevant chunks .
 
