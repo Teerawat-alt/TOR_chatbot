@@ -1,4 +1,4 @@
-# TOR_chatbot
+# Chatbot for Thai Official Terms of Reference (TOR) in Government
  Tor chatbot
 
 ## Concept Idea 
