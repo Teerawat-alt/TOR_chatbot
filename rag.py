@@ -169,7 +169,7 @@ def build_conversation(retriever, llm: LLM) -> Runnable:
 
 class ThaiTORRAG:
     def __init__(self,
-                 llm,  # <--- รับ llm จากภายนอก
+                 llm,  
                  embed_model: str = "intfloat/multilingual-e5-base"):
         self.loader = PDFLoader()
         self.chunker = TextChunker()
